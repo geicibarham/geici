@@ -1,6 +1,7 @@
 
 import css from './about.css'
 import tech from '../../assets/images/tech.jpg'
+import check from '../../assets/images/check.png'
 import Typewriter from 'typewriter-effect';
 const About = () => {
     return (
@@ -19,34 +20,35 @@ const About = () => {
                     src={tech} alt="" />
 
                 <p style={{
-                    fontSize: "smaller",
-                    color:"#2f286c",
+
+                    color: "#2f286c",
                     width: "60%", alignSelf: "center"
                 }}>
+                    <span style={{ fontWeight: "bold", textAlign: "center" }}>
+                        <Typewriter
 
-                    <Typewriter
+                            options={{
 
-                        options={{
+                                autoStart: true,
+                                loop: false,
 
-                            autoStart: true,
-                            loop: false,
+                                fontWeight: "bold",
+                                animateCursor: true,
+                                blinkSpeed: 50,
+                                cursorClassName: 'cursor'
 
+                            }}
 
-                            animateCursor: true,
-                            blinkSpeed: 50,
-                            cursorClassName: 'cursor'
+                            onInit={(typewriter) => {
+                                typewriter.typeString("Hi! I'm Geici!")
+                                    .callFunction(() => {
 
-                        }}
+                                        console.log('String typed out!');
 
-                        onInit={(typewriter) => {
-                            typewriter.typeString("Hi! I'm Geici!")
-                                .callFunction(() => {
+                                    })
+                                    .start();
+                            }} /></span>
 
-                                    console.log('String typed out!');
-
-                                })
-                                .start();
-                        }} />
                     < br />
                     < br />
                     I am a Full Stack Web Developer in
@@ -55,24 +57,34 @@ const About = () => {
                     a second language. I am a great communicator who works well on
                     a team, a curious person who loves learning new things,
                     a hard worker who keeps working until the job is done, and
-                    someone who loves traveling and experiencing different cultures. <br/>
-                    <br/>
+                    someone who loves traveling and experiencing different cultures. <br />
+                    <br />
 
-                        Some of the Technologies I have used are:
-                        * React,
-                        * HTML5,
-                        *GraphQl,
-                        *Javascript,
-                        * CSS, Sass,
-                        *SQL,MySQL,Sequelize,
-                        *MongoDB,
-                        *Express,
-                        *Node.js,
-                        *Bootstrap, 
-                        *Handlebars,
-                        *Git
-
-
+                    Some of the Technologies I have used are:
+                    <ul id="technology-list">
+                        <li style={{color:"rgb(47, 40, 108)"}}>
+                             <img id="check"
+                            src={check} alt="" /> React, Handlebars
+                        </li>
+                        <li style={{color:"rgb(47, 40, 108)"}}>
+                             <img id="check"
+                            src={check} alt="" />{''}HTML5, Javascript, CSS,Sass, Bootstrap 
+                        </li>
+                        <li style={{color:"rgb(47, 40, 108)"}}>
+                             <img id="check"
+                            src={check} alt="" /> {''}GraphQL,SQL,MySQL,Sequelize, MongoDB 
+                            </li>
+                
+                            <li style={{color:"rgb(47, 40, 108)"}}>
+                                 <img id="check"
+                            src={check} alt="" /> {''}Express, Node.js 
+                            </li>
+                            <li style={{color:"rgb(47, 40, 108)"}}>
+                                 <img id="check"
+                            src={check} alt="" /> {''}
+                            Git
+                            </li>
+                    </ul>
                 </p>
             </section>
         </>
