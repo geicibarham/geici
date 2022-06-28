@@ -1,83 +1,107 @@
 import React, { useState } from "react";
-import {  Grow, Card, Grid, CardActions, CardContent, CardMedia, Button, Typography } from "@mui/material";
-
+import { Grow, Card, Grid, CardActions, CardContent, CardMedia, Button, Typography } from "@mui/material";
+import css from './projects.css'
 function Projects() {
     const [projects] = useState([
         {
-            title: "Friendless-in-Seattle",
-            description: "A website that allows users to create accounts and match and chat with people with similar interests. Utilizes Node.js, Express.js, MySQL, and Sequelize. ",
-            deployed: "https://friendless-in-seattle.herokuapp.com/",
-            repo: "https://github.com/Sam-Clark1/Friendless-in-seattle",
+            title: "Coffee & Parenting ☕",
+            description: " A social media for parents, where they can connect to ask for advice,share their concerns, and ideas, talk about their children, see tips and tricks for a specific age group and generate random baby names.",
+            technologies: "React, MongoDB, Apollo Server, JSON Web Tokens,Heroku,GraphQl,React Bootstrap,Node.js,Apollo Client.",
+            deployed: "https://salty-shelf-69418.herokuapp.com/",
+            repo: "https://github.com/geicibarham/Coffee-Parenting",
             timeout: 750
         },
         {
-            title: "D&D Character Creator",
-            description: "An application that utilizes Node.js, Express.js, React.js, MongoDB, Mongoose ODM, and Graphql to generate a website (deployed on Heroku) that allows users to create and keep track of characters for the RPG Dungeons and Dragons.",
-            deployed: "https://dnd-character-creator1.herokuapp.com/",
-            repo: "https://github.com/Sam-Clark1/dungeon-disco",
+            title: "Scout 🐶",
+            description: "   Scout connects pet owners and dog walkers looking for a new gig and a new buddy. Walkers can sign in to look for jobs and owners can sign in to look for pet care",
+            technologies: " Handlebars, Css, NodeJs, Sequelize, Express.js,UnidId,Heroku,mysql.",
+            deployed: "https://sheltered-garden-88579.herokuapp.com/",
+            repo: "https://github.com/bdswartz/walks-of-love",
             timeout: 1000
         },
         {
-            title: "Deep-Thinking",
-            description: "Deep Thinking is a website that allows users to create accounts and then post thoughts they have that can be seen by other users. Users can post reactions to thoughts and also view profiles of other users and see all their thoughts. Built with MongoDB, Express.js, React.js, Node.js, and GraphQL. ",
-            deployed: "https://deep-thinking1.herokuapp.com/",
-            repo: "https://github.com/Sam-Clark1/deep-thinking",
+            title: "Harry Potter Quiz 9¾ ",
+            description: "A fun and timed Javascript Quiz that asks easy and mid difficulty questions and subtracts 15 seconds for each wrong answer!",
+            technologies: "HTML5,Javascript, Css, Bootstrap.",
+            deployed: "https://geicibarham.github.io/Harry-Potter-Quiz/",
+            repo: "https://github.com/geicibarham/Harry-Potter-Quiz",
             timeout: 1750
         },
         {
-            title: "Date-Dime",
-            description: "A website that allows users to search for restaurants by price and location and also gives movie ideas. Uses Jquery, Google Maps API, and MovieGlu API",
-            deployed: "https://sam-clark1.github.io/date-dime/",
-            repo: "https://github.com/Sam-Clark1/date-dime",
+            title: "Silly Quotes 🤪",
+            description: "  Front end Javascript project that fetches data from two different APIS. The first button generates a random quote and the second button translates the generated quote to a random funny language. Options are Minion and Chef. ",
+            technologies: "HTML,Css, Javascript, Third Party APIs",
+            deployed: "https://davidebcurtis.github.io/silly-quotes/",
+            repo: "https://github.com/DavidebCurtis/silly-quotes",
             timeout: 1500
         },
+
         {
-            title: "Social-Media-Backend",
-            description: "An application that leverages Node.js, Express.js, MongoDB and Mongoose to make the foundation for the back end of a social media website. ",
+            title: " SQL Employee Tracker 🛢️",
+            description: "Track your employees using a SQL database. This application runs on the command line and it asks questions using Inquirer.You will be prompted with questions that will let you interact with the database. Currently,users are able to add and view departments, employees,roles, and update employees' roles. ",
+            technologies: "SQL, Inquirer, Chalk - Npm, and Console.Table.",
             deployed: "https://drive.google.com/file/d/1c2ib8BUolWgmfQ1GAxTq9jsGr6F2ojcq/view",
-            repo: "https://github.com/Sam-Clark1/social-media-backend",
+            repo: "https://github.com/geicibarham/Employee-Tracker",
             timeout: 1250
         },
         {
-            title: "Employee-Manager-CLI",
-            description: "This application uses inquirer.js and mysql to provide a command line interface for managing employees, employee roles, and departments. Can add new employees, roles, and departments to a mysql database and can retrieve all that data and view it in the command line using the console.table package.",
-            deployed: "https://drive.google.com/file/d/1Vvnk_1Cc8xU20_7aUPRbVSY2KXGLiKdk/view",
-            repo: "https://github.com/Sam-Clark1/employee-manager-cli",
+            title: "Social Network API 🛢️",
+            description: "Backend Api for a social network that performs CRUD operations with Mongoose on a MongoDb Database.",
+            technologies: "Technologies: MongoDB, Mongoose, Insomnia",
+            deployed: "https://drive.google.com/file/d/1I4mjY715Jo3-NLaQBd6ihvvip7dN0kDU/view",
+            repo: "https://github.com/geicibarham/Social-Network-API",
             timeout: 2000
         }
     ]);
-    return(
-        <Grid container spacing={1}>
-            {projects.map((project, i) => (
-            <Grid item xs={12} sm={12} md={4} lg={4} xl={4} sx={{display:'flex', justifyContent:'center'}} key={project.title}>
-                <Grow in={true} style={{ transformOrigin: '0 0 0' }} {...(true ? { timeout: project.timeout } : {})}>
-                    <Card sx={{ maxWidth: 345, backgroundColor: '#F1F2F6', mb:2, display: 'flex', flexDirection: 'column' }} variant='outlined' >
-                        <CardMedia
-                            component="img"
-                            height="140"
+    return (
+        <section id="projects">
+            <h2 style={{ color: "white", textAlign: "center", paddingBottom:"20px" }}
+
+            >Projects</h2>
+            <Grid container spacing={1}>
+                {projects.map((project, i) => (
+                    <Grid item xs={12} sm={12} md={4} lg={4} xl={4}
+                        sx={{ display: 'flex', justifyContent: 'center' }} key={project.title}>
+                        <Grow in={true} style={{ transformOrigin: '0 0 0' }}
+                            {...(true ? { timeout: project.timeout } : {})}>
+                            <Card sx={{
+                                maxWidth: 345,
+                                backgroundColor: '#F1F2F6', mb: 2,
+                                display: 'flex', flexDirection: 'column'
+                            }}
+                                variant='outlined' >
+                                <CardMedia
+                                    component="img"
+                                    height="140"
 
 
-                            image={require(`../../assets/images/projects/${i}.png`)}
-                            alt={project.title}
-                        />
-                        <CardContent>
-                            <Typography gutterBottom variant="h5" component="div">
-                                {project.title}
-                            </Typography>
-                            <Typography variant="body2" color="text.secondary">
-                                {project.description}
-                            </Typography>
-                        </CardContent>
-                        <CardActions sx={{mt:'auto'}}>
-                            <Button href={project.deployed} size="small" target="_blank" rel='noreferrer'>Deployed App</Button>
-                            <Button href={project.repo} size="small" target="_blank" rel='noreferrer'>Github</Button>
-                        </CardActions>
-                    </Card>
-                </Grow>
+                                    image={require(`../../assets/images/projects/${i}.png`)}
+                                    alt={project.title}
+                                />
+                                <CardContent>
+                                    <Typography gutterBottom variant="h5" component="div">
+                                        {project.title}
+                                    </Typography>
+                                    <Typography variant="body2" color="text.secondary">
+                                        {project.description}
+                                        <br />      <br />
+                                        <p style={{ fontSize: "smaller", fontWeight: "lighter" }}
+                                        >Technologies:
+                                            {project.technologies}</p>
+
+                                    </Typography>
+                                </CardContent>
+                                <CardActions sx={{ mt: 'auto' }}>
+                                    <Button href={project.deployed} size="small" target="_blank" rel='noreferrer'>Deployed App</Button>
+                                    <Button href={project.repo} size="small" target="_blank" rel='noreferrer'>Github</Button>
+                                </CardActions>
+                            </Card>
+                        </Grow>
+                    </Grid>
+                ))}
+
             </Grid>
-            ))}
-            
-        </Grid>
+        </section>
     )
 }
 

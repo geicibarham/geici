@@ -7,6 +7,9 @@
 
 #geici {
     height: 400px;
+    filter: brightness(120%);
+    filter: contrast(120%);
+    filter: drop-shadow(10px 0px 10px rgb(15, 15, 15));
 }
 
 #hero {

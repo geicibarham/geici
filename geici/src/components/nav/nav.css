@@ -20,12 +20,20 @@ nav {
     z-index: 999;
   
   }
+
+  #geici-nav:hover{
+    color:white !important;
+  }
   
   header nav {
     margin: 7px 0;
   
   }
   
+  .navbar.colorChange{
+    background-color: black;
+    
+  }
 
   #link-user{
   display: flex;

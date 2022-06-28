@@ -4,21 +4,33 @@ import css from "./nav.css";
 
 import { NavLink } from "react-router-dom";
 import Dropdown from 'react-bootstrap/Dropdown';
+import resume from '../../geiciane-barham.pdf'
+import {useState} from "react";
 
-
-
+// geici\src\assets\geiciane-barham.pdf
 function Nav() {
+
+  const [colorChange, setColorchange] = useState(false);
+  const changeNavbarColor = () =>{
+     if(window.scrollY >= 80){
+       setColorchange(true);
+     }
+     else{
+       setColorchange(false);
+     }
+  };
+  window.addEventListener('scroll', changeNavbarColor);
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Pinyon+Script&display=swap');
   </style>
 
   return (
 
-    <nav id="main-nav">
+    <nav id="main-nav" className={colorChange ? 'navbar colorChange' : 'navbar'}>
       <h4 id="title">
        
         <NavLink style={{fontWeight:"lighter"}}
-         id="coffee" className="titleBtnLink" to="/">
+         id="geici-nav" className="titleBtnLink" to="/">
           Geiciane Barham
         </NavLink>
 
@@ -32,7 +44,10 @@ function Nav() {
           </Dropdown.Toggle>
 
           <Dropdown.Menu>
-            <Dropdown.Item href="/main">Feed</Dropdown.Item>
+          <Dropdown.Item href="#hero">About</Dropdown.Item>
+            <Dropdown.Item href="#projects">Projects</Dropdown.Item>
+           <Dropdown.Item target="_blank" href={resume}>Resume </Dropdown.Item>
+            <Dropdown.Item href="#contact">Contact</Dropdown.Item>
 
      
 
