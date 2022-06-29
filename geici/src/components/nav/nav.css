@@ -2,8 +2,7 @@ nav {
     background-color: #212529;
     background-color: #321823;
     background-color: #212529;
-    background-color: #5d284e;
-    flex-wrap: nowrap;
+    background-color: #681d5e;
     position: -webkit-sticky;
   
     color: white;
@@ -31,8 +30,7 @@ nav {
   }
   
   .navbar.colorChange{
-    background-color: black;
-    
+    background-color: #6b4897;
   }
 
   #link-user{
